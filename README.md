@@ -23,13 +23,13 @@ cobi 8 gib byte
 ```
 Supported units:
 valid CLI argument / full name
-bit                  bit
-byte                 byte
-kb                   kilobyte
-kib                  kebibyte
-mb                   megabyte
-mib                  mebibyte
-gb                   gigabyte
-gib                  gebibyte
-tb                   terabyte
-tib                  tebibyte
+bit                  bit\
+byte                 byte\
+kb                   kilobyte\
+kib                  kebibyte\
+mb                   megabyte\
+mib                  mebibyte\
+gb                   gigabyte\
+gib                  gebibyte\
+tb                   terabyte\
+tib                  tebibyte\
