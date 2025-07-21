@@ -13,7 +13,7 @@ bytes_to_bits(double bytes)
 double
 bits_to_bytes(double bits)
 {
-        return bits / 8;
+        return bits < 8 ? 0 : bits / 8;
 }
 
 int 
@@ -53,6 +53,8 @@ main(int argc, char **argv)
                         val = val * 1024;
                 } else if (strcmp(argv[2], "kb") == 0) {
                         val = val * 1000;
+                } else if (strcmp(argv[2], "byte") == 0) {
+                        // nothing ever happens
                 } else if (strcmp(argv[2], "bit") == 0) {
                         val = bits_to_bytes(val);
                 } else {
@@ -66,27 +68,27 @@ main(int argc, char **argv)
                 } else if (strcmp(argv[3], "byte") == 0) {
                         printf("%.0lf bytes", val);
                 } else if (strcmp(argv[3], "kb") == 0) {
-                        printf("%.2lf kilobytes\n", val / 1000);
+                        printf("%lf kilobytes\n", val / 1000);
                 } else if (strcmp(argv[3], "kib") == 0) {
-                        printf("%.2lf kebibytes\n", val / 1024);
+                        printf("%lf kebibytes\n", val / 1024);
                 } else if (strcmp(argv[3], "mb") == 0) {
                         val /= pow(1000, 2);
-                        printf("%.2lf megabytes\n", val);
+                        printf("%lf megabytes\n", val);
                 } else if (strcmp(argv[3], "mib") == 0) {
                         val /= pow(1024, 2);
-                        printf("%.2lf mebibytes\n", val);
+                        printf("%lf mebibytes\n", val);
                 } else if (strcmp(argv[3], "gb") == 0) {
                         val /= pow(1000, 3);
-                        printf("%.2lf gigabytes\n", val);
+                        printf("%lf gigabytes\n", val);
                 } else if (strcmp(argv[3], "gib") == 0) {
                         val /= pow(1024, 3);
-                        printf("%.2lf gebibytes\n", val);
+                        printf("%lf gebibytes\n", val);
                 } else if (strcmp(argv[3], "tb") == 0) {
                         val /= pow(1000, 4);
-                        printf("%.2lf terabytes\n", val);
+                        printf("%lf terabytes\n", val);
                 } else if (strcmp(argv[3], "tib") == 0) {
                         val /= pow(1024, 4);
-                        printf("%.2lf tebibytes\n", val);
+                        printf("%lf tebibytes\n", val);
                 } else {
                         printf ("Incorrect type: %s\n", argv[3]);
                         return EXIT_FAILURE;
