@@ -1,4 +1,4 @@
-# cobi
+# cobi - convert bits
 Convert units of digital information in CLI
 
 # Installation
